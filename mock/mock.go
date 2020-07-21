@@ -11,9 +11,9 @@ import (
 	"time"
 
 	"github.com/davecgh/go-spew/spew"
+	"github.com/instana/testify/assert"
 	"github.com/pmezard/go-difflib/difflib"
 	"github.com/stretchr/objx"
-	"github.com/instana/testify/assert"
 )
 
 // TestingT is an interface wrapper around *testing.T
