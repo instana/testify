@@ -1,9 +1,13 @@
 Testify - Thou Shalt Write Tests
 ================================
 
+This is a fork of [`github.com/stretchr/testify`](https://github.com/stretchr/testify) compatible with Go versions prior to go1.13.
+
+This is achieved by putting the `{assert,require}.Error{Is,As}` matchers behind the `+build go1.13` tag. **There is no guarantee of regular upstream updates, use this fork at your own risk.**
+
 ℹ️ We are working on testify v2 and would love to hear what you'd like to see in it, have your say here: https://cutt.ly/testify
 
-[![Build Status](https://travis-ci.org/stretchr/testify.svg)](https://travis-ci.org/stretchr/testify) [![Go Report Card](https://goreportcard.com/badge/github.com/stretchr/testify)](https://goreportcard.com/report/github.com/stretchr/testify) [![GoDoc](https://godoc.org/github.com/stretchr/testify?status.svg)](https://godoc.org/github.com/stretchr/testify)
+[![Build Status](https://travis-ci.org/instana/testify.svg)](https://travis-ci.org/instana/testify) [![Go Report Card](https://goreportcard.com/badge/github.com/instana/testify)](https://goreportcard.com/report/github.com/instana/testify) [![GoDoc](https://godoc.org/github.com/instana/testify?status.svg)](https://godoc.org/github.com/instana/testify)
 
 Go code (golang) set of packages that provide many tools for testifying that your code will behave as you intend.
 
@@ -17,13 +21,13 @@ Get started:
 
   * Install testify with [one line of code](#installation), or [update it with another](#staying-up-to-date)
   * For an introduction to writing test code in Go, see http://golang.org/doc/code.html#Testing
-  * Check out the API Documentation http://godoc.org/github.com/stretchr/testify
+  * Check out the API Documentation http://godoc.org/github.com/instana/testify
   * To make your testing life easier, check out our other project, [gorc](http://github.com/stretchr/gorc)
   * A little about [Test-Driven Development (TDD)](http://en.wikipedia.org/wiki/Test-driven_development)
 
 
 
-[`assert`](http://godoc.org/github.com/stretchr/testify/assert "API documentation") package
+[`assert`](http://godoc.org/github.com/instana/testify/assert "API documentation") package
 -------------------------------------------------------------------------------------------
 
 The `assert` package provides some helpful methods that allow you to write better test code in Go.
@@ -39,7 +43,7 @@ package yours
 
 import (
   "testing"
-  "github.com/stretchr/testify/assert"
+  "github.com/instana/testify/assert"
 )
 
 func TestSomething(t *testing.T) {
@@ -75,7 +79,7 @@ package yours
 
 import (
   "testing"
-  "github.com/stretchr/testify/assert"
+  "github.com/instana/testify/assert"
 )
 
 func TestSomething(t *testing.T) {
@@ -100,14 +104,14 @@ func TestSomething(t *testing.T) {
 }
 ```
 
-[`require`](http://godoc.org/github.com/stretchr/testify/require "API documentation") package
+[`require`](http://godoc.org/github.com/instana/testify/require "API documentation") package
 ---------------------------------------------------------------------------------------------
 
 The `require` package provides same global functions as the `assert` package, but instead of returning a boolean result they terminate current test.
 
 See [t.FailNow](http://golang.org/pkg/testing/#T.FailNow) for details.
 
-[`mock`](http://godoc.org/github.com/stretchr/testify/mock "API documentation") package
+[`mock`](http://godoc.org/github.com/instana/testify/mock "API documentation") package
 ----------------------------------------------------------------------------------------
 
 The `mock` package provides a mechanism for easily writing mock objects that can be used in place of real objects when writing test code.
@@ -119,7 +123,7 @@ package yours
 
 import (
   "testing"
-  "github.com/stretchr/testify/mock"
+  "github.com/instana/testify/mock"
 )
 
 /*
@@ -192,11 +196,11 @@ func TestSomethingElse(t *testing.T) {
 }
 ```
 
-For more information on how to write mock code, check out the [API documentation for the `mock` package](http://godoc.org/github.com/stretchr/testify/mock).
+For more information on how to write mock code, check out the [API documentation for the `mock` package](http://godoc.org/github.com/instana/testify/mock).
 
 You can use the [mockery tool](http://github.com/vektra/mockery) to autogenerate the mock code against an interface as well, making using mocks much quicker.
 
-[`suite`](http://godoc.org/github.com/stretchr/testify/suite "API documentation") package
+[`suite`](http://godoc.org/github.com/instana/testify/suite "API documentation") package
 -----------------------------------------------------------------------------------------
 
 The `suite` package provides functionality that you might be used to from more common object oriented languages.  With it, you can build a testing suite as a struct, build setup/teardown methods and testing methods on your struct, and run them with 'go test' as per normal.
@@ -207,8 +211,8 @@ An example suite is shown below:
 // Basic imports
 import (
     "testing"
-    "github.com/stretchr/testify/assert"
-    "github.com/stretchr/testify/suite"
+    "github.com/instana/testify/assert"
+    "github.com/instana/testify/suite"
 )
 
 // Define the suite, and absorb the built-in basic suite
@@ -238,9 +242,9 @@ func TestExampleTestSuite(t *testing.T) {
 }
 ```
 
-For a more complete example, using all of the functionality provided by the suite package, look at our [example testing suite](https://github.com/stretchr/testify/blob/master/suite/suite_test.go)
+For a more complete example, using all of the functionality provided by the suite package, look at our [example testing suite](https://github.com/instana/testify/blob/master/suite/suite_test.go)
 
-For more information on writing suites, check out the [API documentation for the `suite` package](http://godoc.org/github.com/stretchr/testify/suite).
+For more information on writing suites, check out the [API documentation for the `suite` package](http://godoc.org/github.com/instana/testify/suite).
 
 `Suite` object has assertion methods:
 
@@ -248,7 +252,7 @@ For more information on writing suites, check out the [API documentation for the
 // Basic imports
 import (
     "testing"
-    "github.com/stretchr/testify/suite"
+    "github.com/instana/testify/suite"
 )
 
 // Define the suite, and absorb the built-in basic suite
@@ -284,15 +288,15 @@ Installation
 
 To install Testify, use `go get`:
 
-    go get github.com/stretchr/testify
+    go get github.com/instana/testify
 
 This will then make the following packages available to you:
 
-    github.com/stretchr/testify/assert
-    github.com/stretchr/testify/require
-    github.com/stretchr/testify/mock
-    github.com/stretchr/testify/suite
-    github.com/stretchr/testify/http (deprecated)
+    github.com/instana/testify/assert
+    github.com/instana/testify/require
+    github.com/instana/testify/mock
+    github.com/instana/testify/suite
+    github.com/instana/testify/http (deprecated)
 
 Import the `testify/assert` package into your code using this template:
 
@@ -301,7 +305,7 @@ package yours
 
 import (
   "testing"
-  "github.com/stretchr/testify/assert"
+  "github.com/instana/testify/assert"
 )
 
 func TestSomething(t *testing.T) {
@@ -316,14 +320,15 @@ func TestSomething(t *testing.T) {
 Staying up to date
 ==================
 
-To update Testify to the latest version, use `go get -u github.com/stretchr/testify`.
+To update Testify to the latest version, use `go get -u github.com/instana/testify`.
 
 ------
 
 Supported go versions
 ==================
 
-We support the two major Go versions, which are 1.13 and 1.14 at the moment.
+~We support the two major Go versions, which are 1.13 and 1.14 at the moment.~
+We support the three major Go versions, which are 1.11, 1.12, and 1.13 at the moment.
 
 ------
 

@@ -15,9 +15,9 @@ package testify
 // blank imports help docs.
 import (
 	// assert package
-	_ "github.com/stretchr/testify/assert"
+	_ "github.com/instana/testify/assert"
 	// http package
-	_ "github.com/stretchr/testify/http"
+	_ "github.com/instana/testify/http"
 	// mock package
-	_ "github.com/stretchr/testify/mock"
+	_ "github.com/instana/testify/mock"
 )
