@@ -1,5 +1,5 @@
 /*
-* CODE GENERATED AUTOMATICALLY WITH github.com/stretchr/testify/_codegen
+* CODE GENERATED AUTOMATICALLY WITH github.com/instana/testify/_codegen
 * THIS FILE MUST NOT BE EDITED BY HAND
  */
 
@@ -112,24 +112,6 @@ func Errorf(t TestingT, err error, msg string, args ...interface{}) bool {
 		h.Helper()
 	}
 	return Error(t, err, append([]interface{}{msg}, args...)...)
-}
-
-// ErrorAsf asserts that at least one of the errors in err's chain matches target, and if so, sets target to that error value.
-// This is a wrapper for errors.As.
-func ErrorAsf(t TestingT, err error, target interface{}, msg string, args ...interface{}) bool {
-	if h, ok := t.(tHelper); ok {
-		h.Helper()
-	}
-	return ErrorAs(t, err, target, append([]interface{}{msg}, args...)...)
-}
-
-// ErrorIsf asserts that at least one of the errors in err's chain matches target.
-// This is a wrapper for errors.Is.
-func ErrorIsf(t TestingT, err error, target error, msg string, args ...interface{}) bool {
-	if h, ok := t.(tHelper); ok {
-		h.Helper()
-	}
-	return ErrorIs(t, err, target, append([]interface{}{msg}, args...)...)
 }
 
 // Eventuallyf asserts that given condition will be met in waitFor time,
@@ -492,15 +474,6 @@ func NotEqualValuesf(t TestingT, expected interface{}, actual interface{}, msg s
 		h.Helper()
 	}
 	return NotEqualValues(t, expected, actual, append([]interface{}{msg}, args...)...)
-}
-
-// NotErrorIsf asserts that at none of the errors in err's chain matches target.
-// This is a wrapper for errors.Is.
-func NotErrorIsf(t TestingT, err error, target error, msg string, args ...interface{}) bool {
-	if h, ok := t.(tHelper); ok {
-		h.Helper()
-	}
-	return NotErrorIs(t, err, target, append([]interface{}{msg}, args...)...)
 }
 
 // NotNilf asserts that the specified object is not nil.
